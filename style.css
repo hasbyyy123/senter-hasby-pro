@@ -1,0 +1,567 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #080b10;
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 25px 15px;
+}
+
+.app-container {
+    max-width: 500px;
+    margin: auto;
+}
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0;
+    border-bottom: 1px solid #252b35;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 35px;
+    color: #facc15;
+}
+
+.logo h2 {
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.logo p {
+    font-size: 8px;
+    color: #8993a3;
+    margin-top: 5px;
+}
+
+.premium-badge {
+    background: #27220e;
+    color: #facc15;
+    border: 1px solid #665319;
+    padding: 7px 10px;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+/* MAIN */
+
+.main-content {
+    padding-top: 45px;
+}
+
+.welcome {
+    text-align: center;
+}
+
+.small-title {
+    color: #facc15;
+    font-size: 10px;
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+.welcome h1 {
+    font-size: 29px;
+    margin: 12px 0;
+}
+
+.welcome > p:last-child {
+    color: #8993a3;
+    font-size: 12px;
+}
+
+/* FLASHLIGHT */
+
+.flashlight-circle {
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #252b35, #11151c);
+    border: 2px solid #343b47;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    transition: 0.4s;
+}
+
+.flashlight-circle span {
+    font-size: 55px;
+}
+
+.flashlight-circle p {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #aab2bf;
+    margin-top: 12px;
+    font-weight: 700;
+}
+
+.flashlight-circle.active {
+    border-color: #facc15;
+    box-shadow: 0 0 35px rgba(250,204,21,0.3);
+}
+
+/* BUTTONS */
+
+.control-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.control-btn {
+    border: none;
+    border-radius: 15px;
+    padding: 20px 10px;
+    color: white;
+    font-size: 19px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.control-btn span {
+    font-size: 28px;
+}
+
+.control-btn small {
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.on-btn {
+    background: linear-gradient(145deg, #16834b, #07552f);
+}
+
+.off-btn {
+    background: linear-gradient(145deg, #343d4b, #202733);
+}
+
+.control-btn:active {
+    transform: scale(0.96);
+}
+
+.control-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* FEATURES */
+
+.features {
+    margin-top: 40px;
+    background: #111720;
+    border: 1px solid #252e3b;
+    padding: 22px;
+    border-radius: 18px;
+}
+
+.features h3 {
+    font-size: 12px;
+    color: #facc15;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 15px 0;
+    border-bottom: 1px solid #252e3b;
+}
+
+.feature-item:last-child {
+    border-bottom: none;
+}
+
+.feature-item > span {
+    font-size: 25px;
+    color: #facc15;
+    width: 30px;
+    text-align: center;
+}
+
+.feature-item div {
+    flex: 1;
+}
+
+.feature-item h4 {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.feature-item p {
+    color: #8792a3;
+    font-size: 10px;
+}
+
+.feature-item b {
+    color: #facc15;
+    font-size: 9px;
+}
+
+/* BILLING POPUP */
+
+.billing-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.billing-overlay[hidden] {
+    display: none;
+}
+
+.billing-box {
+    width: 100%;
+    max-width: 370px;
+    background: #151b25;
+    border: 1px solid #55451a;
+    border-radius: 22px;
+    padding: 28px 22px;
+    text-align: center;
+    animation: popup 0.3s ease;
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.billing-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.invoice-label {
+    font-size: 10px;
+    color: #facc15;
+    letter-spacing: 3px;
+}
+
+.billing-box h2 {
+    font-size: 21px;
+    margin: 12px 0;
+}
+
+.invoice-description {
+    font-size: 11px;
+    color: #9ba5b5;
+}
+
+.invoice-price {
+    background: #202733;
+    border-radius: 14px;
+    padding: 22px;
+    margin: 25px 0;
+}
+
+.invoice-price small {
+    color: #aab2bf;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.invoice-price h1 {
+    font-size: 42px;
+    color: #facc15;
+    margin: 10px 0;
+}
+
+.invoice-price p {
+    font-size: 10px;
+    color: #aab2bf;
+}
+
+.pay-button {
+    width: 100%;
+    padding: 15px;
+    background: #eab308;
+    border: none;
+    border-radius: 10px;
+    color: #111;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.prank-note {
+    font-size: 10px;
+    color: #aab2bf;
+    margin: 18px 0;
+    line-height: 1.7;
+}
+
+.close-button {
+    background: transparent;
+    border: 1px solid #444e5d;
+    color: white;
+    padding: 11px;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 35px 0 15px;
+}
+
+footer p {
+    font-size: 10px;
+    font-weight: 700;
+}
+
+footer span {
+    font-size: 8px;
+    color: #778294;
+    display: block;
+    margin-top: 8px;
+}
+
+/* MOBILE */
+
+@media (max-width: 380px) {
+    .welcome h1 {
+        font-size: 24px;
+    }
+
+    .logo h2 {
+        font-size: 12px;
+    }
+
+    .premium-badge {
+        font-size: 8px;
+    }
+}
+
+/* LOCKED OFF BUTTON */
+
+.off-btn.locked {
+    background: linear-gradient(145deg, #292929, #151515);
+    border: 1px solid #d4a72c;
+    color: #facc15;
+    position: relative;
+    box-shadow: 0 0 18px rgba(250,204,21,0.12);
+}
+
+.off-btn.locked span {
+    font-size: 30px;
+}
+
+.off-btn.locked small {
+    color: #facc15;
+}
+
+.off-btn.locked:hover {
+    background: #3a3018;
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(250,204,21,0.2);
+}
+
+/* PREMIUM ANIMATED BACKGROUND */
+
+body {
+    background:
+        radial-gradient(ellipse at 50% 10%, #202b3d 0%, transparent 55%),
+        radial-gradient(ellipse at 10% 80%, #29200b 0%, transparent 45%),
+        #080b10;
+    background-size: 200% 200%;
+    animation: backgroundMove 10s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* LIGHTNING EFFECT */
+
+.logo-icon {
+    display: inline-block;
+    animation: lightning 1.8s infinite;
+}
+
+@keyframes lightning {
+    0%, 85%, 100% {
+        filter: drop-shadow(0 0 3px #facc15);
+        transform: scale(1);
+    }
+    90% {
+        filter: drop-shadow(0 0 18px #fff176);
+        transform: scale(1.2);
+    }
+    95% {
+        filter: drop-shadow(0 0 5px #facc15);
+        transform: scale(1);
+    }
+}
+
+/* MOVING FLASHLIGHT GLOW */
+
+.flashlight-circle {
+    animation: glowMove 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove {
+    from {
+        box-shadow: 0 0 15px rgba(250,204,21,0.05);
+    }
+    to {
+        box-shadow: 0 0 45px rgba(250,204,21,0.22);
+    }
+}
+
+/* PREMIUM CARD EFFECT */
+
+.features {
+    transition: 0.4s;
+}
+
+.features:hover {
+    border-color: #80651b;
+    box-shadow: 0 0 25px rgba(250,204,21,0.08);
+}
+
+/* SPACING PREMIUM BUTTONS */
+
+.pay-button {
+    margin-bottom: 18px;
+    padding: 17px;
+}
+
+.close-button {
+    margin-top: 5px;
+    padding: 14px;
+}
+
+.prank-note {
+    margin-top: 22px;
+    line-height: 1.8;
+}
+
+/* KOTAK RINGKASAN PEMBAYARAN */
+
+.payment-details {
+    width: 100%;
+    background: linear-gradient(145deg, #222c3a, #171e29);
+    border: 1px solid #465163;
+    border-radius: 15px;
+    padding: 22px;
+    margin: 25px 0;
+    text-align: left;
+}
+
+.payment-details div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    font-size: 12px;
+    color: #b7c0ce;
+}
+
+.payment-details div:last-child {
+    border-top: 1px solid #465163;
+    margin-top: 12px;
+    padding-top: 22px;
+    color: #facc15;
+    font-weight: 800;
+}
+
+.payment-details b {
+    color: white;
+    white-space: nowrap;
+}
+
+.payment-details div:last-child b {
+    color: #facc15;
+    font-size: 14px;
+}
+
+/* BRIGHT FLASHLIGHT EFFECT */
+
+.flashlight-circle.active {
+    background: radial-gradient(
+        circle,
+        #fffde7 0%,
+        #fff176 25%,
+        #facc15 50%,
+        #8a6410 100%
+    );
+
+    border: 3px solid #fff176;
+
+    box-shadow:
+        0 0 25px #facc15,
+        0 0 60px rgba(250, 204, 21, 0.8),
+        0 0 120px rgba(250, 204, 21, 0.4);
+
+    transform: scale(1.08);
+}
+
+.flashlight-circle.active span {
+    filter: brightness(2);
+}
+
+.flashlight-circle.active p {
+    color: #171717;
+    font-weight: 900;
+}
+
+/* SCREEN LIGHT EFFECT */
+
+body:has(.flashlight-circle.active) {
+    background:
+        radial-gradient(
+            circle at center 35%,
+            rgba(250, 204, 21, 0.25),
+            transparent 65%
+        ),
+        #080b10;
+}
